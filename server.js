@@ -5,7 +5,7 @@ var request = require('request');
 
 const app = express();
 const url = '/data';
-const creds = require('./creds.json');
+const creds = require('./cred.json');
 
 app.use(bodyParser.json());
 app.use('/', express.static('zz-fe/dist/zz-fe'))

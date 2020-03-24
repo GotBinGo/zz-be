@@ -5,15 +5,14 @@ var request = require('request');
 
 const app = express();
 const url = '/data';
+const creds = require('./creds.json');
 
 app.use(bodyParser.json());
-app.use('/', express.static('build'))
+app.use('/', express.static('zz-fe/dist/zz-fe'))
 
 app.get(url, function (req, res) {
 
-    var username = "username";
-    var password = "password";
-    var auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
+    var auth = "Basic " + new Buffer(creds.username + ":" + creds.password).toString("base64");
     var url = "https://0f86eebe-a798-4ec5-969b-a8c5fcec4f85.eu10.cp.iot.sap/iot/processing/api/v1/tenant/43294285/measures/capabilities/d0befbd3-2e30-4671-baff-76f0a52bcb12?skip=0&top=100";
 
     request.get({

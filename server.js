@@ -5,7 +5,6 @@ var request = require('request');
 
 const app = express();
 const url = '/data';
-const users = require('./users.json');
 
 app.use(bodyParser.json());
 app.use('/', express.static('build'))

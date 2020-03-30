@@ -1,0 +1,20 @@
+.logo-img{
+    max-width: 100px;
+}
+
+.motto{
+    font-size: 30px;
+    color: white;
+}
+
+.bg-gradient-danger {
+    background: #75b94e linear-gradient(180deg, #65b64b, #75b94e) repeat-x !important;
+}
+
+.main-content{
+    background-color: #f4f3ef;
+}
+
+.selected-row{
+    background-color: #c1c1c1;
+}

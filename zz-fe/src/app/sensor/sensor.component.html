@@ -1,1 +1,77 @@
-<p>sensor works!</p>
+<div class="header bg-gradient-danger">
+    <div class="py-4 pl-5">
+        <img class="logo-img" src="https://zalazone.hu/wp-content/uploads/2017/07/zone-logo.jpg" />
+        <span class="motto pl-5">Sensor data</span>
+    </div>
+</div>
+
+<div class="container-fluid px-5 py-4">
+    <div class="row">
+        <div class="col-xl-6 mb-5 mb-xl-0">
+            <div class="card">
+                <div class="card-body img-center">
+                    <canvas #map width="600" height="800"> </canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 mb-5 mb-xl-0">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="mb-0">Actual sensor data</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Sensor ID</th>
+                                <th scope="col">Temperature</th>
+                                <th scope="col">Last measure date</th>
+                                <th scope="col">active</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let sensor of sensorModel" [class]="sensor.id == selectedSensorId ? 'selected-row' : ''">
+                                <th scope="row">
+                                    {{sensor.id}}
+                                </th>
+                                <td>
+                                    {{sensor.temperature}}
+                                </td>
+                                <td>
+                                    {{sensor.lastMeasureDate | date: 'short'}}
+                                </td>
+                                <td>
+                                    {{sensor.active}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card shadow mt-4">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="mb-0">Sensor data today</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+                        [plugins]="lineChartPlugins">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

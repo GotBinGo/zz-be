@@ -1,0 +1,31 @@
+.logo-img{
+    max-width: 100px;
+}
+
+.motto{
+    font-size: 30px;
+    color: white;
+}
+
+.bg-gradient-danger {
+    background: #75b94e linear-gradient(180deg, #65b64b, #75b94e) repeat-x !important;
+}
+
+.icon-size{
+    font-size: 25px;
+}
+
+.img-size{
+    max-width: 500px;
+}
+
+.img-center{
+    margin: auto;
+}
+
+.cursor-style{
+    cursor: pointer;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.05); }

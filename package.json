@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "1.17.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "express": "4.15.3",
     "http": "0.0.0",
     "ng2-charts": "^2.3.0",
